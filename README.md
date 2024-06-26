@@ -1,0 +1,1 @@
+Note Finder is an application to find all the notes in any Key-Scale combination
