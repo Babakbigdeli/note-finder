@@ -6,34 +6,90 @@
     <meta name="description" content="Discover music notes in any key and scale combination.">
     <meta name="author" content="Babak Bigdeli">
     <title>Note Finder</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Tailwind CSS via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Link to external fonts (example: Google Fonts) -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
-    <div class="content">
-        <header class="bg-blue-600 text-white p-4">
-            <h1 class="text-xl">Note Finder</h1>
-        </header>
-        <main class="main p-4">
-            <h2 class="text-2xl font-semibold mb-2">Find the music notes in any Key-Scale combination</h2>
-            <section id="pickerCard">
-                <p class="text-xl">Pick a Key and a Scale from the dropdown menu</p>
-            </section>
-            <section id="notesCard">
-            </section>
-            <section id="randomizerCard">
-            </section>
-            <section id="metronomeCard">
-            </section>
-        </main>
-        <footer class="bg-blue-600 text-white p-4">
-            <p>&copy; 2024 Babak Bigdeli. All rights reserved.</p>
-        </footer>
+<body class="bg-gray-200 p-4">
+    <div class="container mx-auto p-4 max-w-md">
+        <!-- Scale and Key Dropdown -->
+        <div class="flex justify-between items-center mb-4">
+            <select id="scale" class="form-select w-1/2 p-2 border rounded-md max-h-20 overflow-y-auto">
+                <option>Select Scale</option>
+                <option value="major">Major</option>
+                <option value="natural_minor">Natural Minor</option>
+                <option value="pentatonic_minor">Pentatonic Minor</option>
+                <option value="pentatonic_major">Pentatonic Major</option>
+                <option value="blues">Blues</option>
+                <option value="harmonic_minor">Harmonic Minor</option>
+                <option value="dorian_mode">Dorian Mode</option>
+                <option value="mixolydian_mode">Mixolydian</option>
+                <option value="phrygian_dominant">Phrygian Dominant</option>
+                <option value="chromatic">Chromatic</option>
+            </select>
+            <select id="key" class="form-select w-1/2 p-2 border rounded-md ml-4 max-h-20 overflow-y-auto">
+                <option>Select Key</option>
+                <option value="A">A</option>
+                <option value="A#">A# / Bb</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="C#">C# / Db</option>
+                <option value="D">D</option>
+                <option value="D#">D# / Eb</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="F#">F# / Gb</option>
+                <option value="G">G</option>
+                <option value="G#">G# / Ab</option>
+            </select>
+        </div>
+        <!-- Show Notes Button -->
+        <div class="flex justify-center mb-4">
+            <button class="btn bg-blue-500 text-white font-bold p-2 rounded-md w-full">Show Notes</button>
+        </div>
+        <div class="bg-white p-4 shadow-md font-bold rounded-md mb-4">
+            <p class="text-gray-700 text-justify">
+            Below are the notes for your selected key and scale combination. Locate these notes in two positions on your instrument, then practice identifying them by randomizing the order. You can adjust the interval lengths to make the exercise easier or harder.
+            </p>
+        </div>
+        <!-- Notes Grid -->
+        <div id="note-grid" class="grid grid-cols-8 gap-2 mb-4 p-4 bg-white shadow-md rounded-md">
+            <!-- First octave row -->
+            <div class="col-span-8 text-center font-bold">Octave 1</div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <!-- Second octave row -->
+            <div class="col-span-8 text-center font-bold">Octave 2</div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+            <div class="note-tile"></div>
+        </div>
+        <div class="flex space-x-2 justify-center">
+            <!-- Slower Button -->
+            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+            Slower
+            </button>
+            <!-- Randomize Button -->
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
+            Randomize
+            </button>
+            <!-- Faster Button -->
+            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
+            Faster
+            </button>
+        </div>
     </div>
 </body>
 </html>
