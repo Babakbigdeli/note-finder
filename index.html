@@ -16,7 +16,7 @@
         <!-- Scale and Key Dropdown -->
         <div class="flex justify-between items-center mb-4">
             <select id="key" class="form-select w-1/2 p-2 border rounded-md max-h-20">
-                <option>Select Key</option>
+                <option disabled selected hidden>Select Key</option>
                 <option value="A">A</option>
                 <option value="A#">A# / Bb</option>
                 <option value="B">B</option>
@@ -31,9 +31,9 @@
                 <option value="G#">G# / Ab</option>
             </select>
             <select id="scale" class="form-select w-1/2 p-2 border rounded-md max-h-20">
-                <option>Select Scale</option>
+                <option disabled selected hidden>Select Scale</option>
                 <option value="major">Major</option>
-                <option value="natural_minor">Natural Minor</option>
+                <option value="minor">Minor</option>
                 <option value="pentatonic_minor">Pentatonic Minor</option>
                 <option value="pentatonic_major">Pentatonic Major</option>
                 <option value="major_blues">Major Blues</option>
@@ -46,7 +46,7 @@
         </div>
         <!-- Show Notes Button -->
         <div class="flex justify-center mb-4">
-            <button class="btn bg-blue-500 text-white font-bold p-2 rounded-md w-full">Show Notes</button>
+            <button class="btn bg-blue-500 text-white font-bold p-2 rounded-md w-full" onclick=showNotes()>Show Notes</button>
         </div>
         <div class="bg-white p-4 shadow-md font-bold rounded-md mb-4">
             <p class="text-gray-700 text-justify">
@@ -57,24 +57,24 @@
         <div id="note-grid" class="grid grid-cols-8 gap-2 mb-4 p-4 bg-white shadow-md rounded-md">
             <!-- First octave row -->
             <div class="col-span-8 text-center font-bold">Octave 1</div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
+            <div class="note-tile-row1"></div>
+            <div class="note-tile-row1"></div>
+            <div class="note-tile-row1"></div>
+            <div class="note-tile-row1"></div>
+            <div class="note-tile-row1"></div>
+            <div class="note-tile-row1"></div>
+            <div class="note-tile-row1"></div>
+            <div class="note-tile-row1"></div>
             <!-- Second octave row -->
             <div class="col-span-8 text-center font-bold">Octave 2</div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
-            <div class="note-tile"></div>
+            <div class="note-tile-row2"></div>
+            <div class="note-tile-row2"></div>
+            <div class="note-tile-row2"></div>
+            <div class="note-tile-row2"></div>
+            <div class="note-tile-row2"></div>
+            <div class="note-tile-row2"></div>
+            <div class="note-tile-row2"></div>
+            <div class="note-tile-row2"></div>
         </div>
         <div class="flex space-x-2 justify-center">
             <!-- Slower Button -->
