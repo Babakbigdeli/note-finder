@@ -15,20 +15,7 @@
     <div class="container mx-auto p-4 max-w-md">
         <!-- Scale and Key Dropdown -->
         <div class="flex justify-between items-center mb-4">
-            <select id="scale" class="form-select w-1/2 p-2 border rounded-md max-h-20 overflow-y-auto">
-                <option>Select Scale</option>
-                <option value="major">Major</option>
-                <option value="natural_minor">Natural Minor</option>
-                <option value="pentatonic_minor">Pentatonic Minor</option>
-                <option value="pentatonic_major">Pentatonic Major</option>
-                <option value="blues">Blues</option>
-                <option value="harmonic_minor">Harmonic Minor</option>
-                <option value="dorian_mode">Dorian Mode</option>
-                <option value="mixolydian_mode">Mixolydian</option>
-                <option value="phrygian_dominant">Phrygian Dominant</option>
-                <option value="chromatic">Chromatic</option>
-            </select>
-            <select id="key" class="form-select w-1/2 p-2 border rounded-md ml-4 max-h-20 overflow-y-auto">
+            <select id="key" class="form-select w-1/2 p-2 border rounded-md max-h-20">
                 <option>Select Key</option>
                 <option value="A">A</option>
                 <option value="A#">A# / Bb</option>
@@ -42,6 +29,19 @@
                 <option value="F#">F# / Gb</option>
                 <option value="G">G</option>
                 <option value="G#">G# / Ab</option>
+            </select>
+            <select id="scale" class="form-select w-1/2 p-2 border rounded-md max-h-20">
+                <option>Select Scale</option>
+                <option value="major">Major</option>
+                <option value="natural_minor">Natural Minor</option>
+                <option value="pentatonic_minor">Pentatonic Minor</option>
+                <option value="pentatonic_major">Pentatonic Major</option>
+                <option value="major_blues">Major Blues</option>
+                <option value="minor_blues">Minor Blues</option>
+                <option value="harmonic_minor">Harmonic Minor</option>
+                <option value="dorian">Dorian</option>
+                <option value="mixolydian">Mixolydian</option>
+                <option value="phrygian_dominant">Phrygian Dominant</option>
             </select>
         </div>
         <!-- Show Notes Button -->
