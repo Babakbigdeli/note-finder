@@ -1,5 +1,5 @@
 /* Style for the note tiles */
-.note-tile {
+.note-tile-row1, .note-tile-row2 {
     background-color: #e5e7eb;
     height: 50px;
     display: flex;
