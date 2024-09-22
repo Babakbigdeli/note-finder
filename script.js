@@ -1,7 +1,17 @@
 // global variables first
 const W = 2;
 const H = 1;
-const formula = [W, W, H, W, W, W, H];
+const formula = {major : [W, W, H, W, W, W, H], 
+                natural_minor : [W, H, W, W, H, W, W], 
+                pentatonic_minor : [W+H, W, W, W+H, W], 
+                pentatonic_major : [W, W, W+H, W, W+H],
+                major_blues : [W, H, H, W, W, W+H],
+                minor_blues : [W, H, W, H, W+H, H],
+                harmonic_minor : [W, H, W, W, H, W+H, H],
+                dorian : [W, H, W, W, W, H, W],
+                mixolydian: [W, W, H, W, W, H, W],
+                phrygian_dominant : [H, W+H, H, W, H, W, W]
+                };
 const notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
 
 
