@@ -2,7 +2,7 @@
 const W = 2;
 const H = 1;
 const formula = {major : [W, W, H, W, W, W, H], 
-                natural_minor : [W, H, W, W, H, W, W], 
+                minor : [W, H, W, W, H, W, W], 
                 pentatonic_minor : [W+H, W, W, W+H, W], 
                 pentatonic_major : [W, W, W+H, W, W+H],
                 major_blues : [W, H, H, W, W, W+H],
@@ -14,6 +14,8 @@ const formula = {major : [W, W, H, W, W, W, H],
                 };
 const notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#'];
 
+const key = document.getElementById('key').value
+const scaleType = document.getElementById('scale').value
 
 function noteFinder(key, scaleType) {
     const scaleNotes = [];
@@ -27,6 +29,30 @@ function noteFinder(key, scaleType) {
         startPoint = (startPoint + step) % notes.length;
         scaleNotes.push(notes[startPoint]);
     });
-    console.log(scaleNotes);
     return scaleNotes;
 }
+
+function showNotes() {
+    const key = document.getElementById('key').value
+    const scaleType = document.getElementById('scale').value
+    const notesToShow = noteFinder(key, scaleType)
+    const noteTiles = document.querySelectorAll('#note-grid .note-tile-row1');
+    const clonedTiles = document.querySelectorAll('#note-grid .note-tile-row2')
+    // clear all tiles before populating them with the content
+    noteTiles.forEach(tile => {
+        tile.innerText = '';
+    });
+    notesToShow.forEach((note, index) => {
+        if (noteTiles[index]) {
+            noteTiles[index].innerText = note;
+        } 
+    });
+    // clone row1 of tiles into row2 after they are populated
+    noteTiles.forEach((tile, index) => {
+        if (clonedTiles[index]) {
+            clonedTiles[index].innerText = tile.innerText;
+        } 
+    });
+        
+}
+
