@@ -52,7 +52,10 @@ function showNotes() {
         if (clonedTiles[index]) {
             clonedTiles[index].innerText = tile.innerText;
         } 
-    });
-        
+    });     
 }
 
+function randomizer(arr1, arr2) {
+    const combinedArray = [...arr1, ...arr2]
+console.log(combinedArray.at(Math.floor(Math.random() * combinedArray.length)))
+}
