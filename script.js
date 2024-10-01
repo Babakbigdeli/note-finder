@@ -55,7 +55,28 @@ function showNotes() {
     });     
 }
 
-function randomizer(arr1, arr2) {
-    const combinedArray = [...arr1, ...arr2]
-console.log(combinedArray.at(Math.floor(Math.random() * combinedArray.length)))
+function randomizer() {
+    // Select all the tiles from both rows
+    const tiles = document.querySelectorAll('.note-tile-row1, .note-tile-row2');
+    // checks if the text is tile isnt blank or contains only whitespace
+    const populatedTiles = Array.from(tiles).filter(tile => tile.innerText.trim() !== '')
+    // Function to reset the color of all tiles
+    function resetTileColors() {
+        populatedTiles.forEach(tile => {
+            tile.style.backgroundColor = ''; // Resets the color
+        });
+    }
+    // Function to randomly highlight one tile
+    function randomHighlight() {
+        // Reset all tiles to original color before highlighting a new one
+        resetTileColors();
+
+        if ( populatedTiles.length > 0) {
+        populatedTiles[Math.floor(Math.random() * populatedTiles.length)].style.backgroundColor = 'red'
+        }
+
+    }
+    setInterval(randomHighlight, 1000);
 }
+
+
