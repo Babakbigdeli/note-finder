@@ -60,19 +60,20 @@ function randomizer() {
     const tiles = document.querySelectorAll('.note-tile-row1, .note-tile-row2');
     // checks if the text is tile isnt blank or contains only whitespace
     const populatedTiles = Array.from(tiles).filter(tile => tile.innerText.trim() !== '')
-    // Function to reset the color of all tiles
-    function resetTileColors() {
+    // Function to reset the fontsize of the tile
+    function resetTileFontSize() {
         populatedTiles.forEach(tile => {
-            tile.style.backgroundColor = ''; // Resets the color
+            tile.style.fontSize = '20px';
         });
     }
     // Function to randomly highlight one tile
     function randomHighlight() {
         // Reset all tiles to original color before highlighting a new one
-        resetTileColors();
+        resetTileFontSize();
 
         if ( populatedTiles.length > 0) {
-        populatedTiles[Math.floor(Math.random() * populatedTiles.length)].style.backgroundColor = 'red'
+        const randomTile = populatedTiles[Math.floor(Math.random() * populatedTiles.length)];
+        randomTile.style.fontSize = '50px';
         }
 
     }
