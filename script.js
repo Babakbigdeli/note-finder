@@ -55,6 +55,9 @@ function showNotes() {
     });     
 }
 
+var interval = 2000;
+var intervalID;
+
 function randomizer() {
     // Select all the tiles from both rows
     const tiles = document.querySelectorAll('.note-tile-row1, .note-tile-row2');
@@ -66,18 +69,34 @@ function randomizer() {
             tile.style.fontSize = '20px';
         });
     }
-    // Function to randomly highlight one tile
+    // Function to randomly increase thye fontSize of a tile
     function randomHighlight() {
-        // Reset all tiles to original color before highlighting a new one
+        // Reset all tiles to original font size
         resetTileFontSize();
 
         if ( populatedTiles.length > 0) {
         const randomTile = populatedTiles[Math.floor(Math.random() * populatedTiles.length)];
         randomTile.style.fontSize = '50px';
         }
-
+console.log(interval)
     }
-    setInterval(randomHighlight, 1000);
+   intervalID = setInterval(randomHighlight, interval);
 }
 
+// Function to update the interval for randomizer
+function updateRandomizer(newInterval) {
+    clearInterval(intervalID); 
+    interval = newInterval; 
+    randomizer(); 
+}
+
+function decreaser () {
+        if (interval > 500) { 
+            updateRandomizer(interval - 500); // Decrease interval time to make it faster
+        }
+    };
+
+function increaser() {
+        updateRandomizer(interval + 500); // Increase interval time to make it slower
+    };
 
