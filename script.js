@@ -58,9 +58,11 @@ function showNotes() {
 var interval = 2000;
 var intervalID;
 
+// Select all the tiles from both rows
+const tiles = document.querySelectorAll('.note-tile-row1, .note-tile-row2');
+
 function randomizer() {
-    // Select all the tiles from both rows
-    const tiles = document.querySelectorAll('.note-tile-row1, .note-tile-row2');
+
     // checks if the text is tile isnt blank or contains only whitespace
     const populatedTiles = Array.from(tiles).filter(tile => tile.innerText.trim() !== '')
     // Function to reset the fontsize of the tile
@@ -78,9 +80,9 @@ function randomizer() {
         const randomTile = populatedTiles[Math.floor(Math.random() * populatedTiles.length)];
         randomTile.style.fontSize = '50px';
         }
-console.log(interval)
+        console.log(interval)
     }
-   intervalID = setInterval(randomHighlight, interval);
+    intervalID = setInterval(randomHighlight, interval);
 }
 
 // Function to update the interval for randomizer
@@ -99,4 +101,11 @@ function decreaser () {
 function increaser() {
         updateRandomizer(interval + 500); // Increase interval time to make it slower
     };
+
+function stopRandomization() {
+    clearInterval(intervalID); // Clear the interval and reset the font size 
+    tiles.forEach(tile => {
+        tile.style.fontSize = '20px';
+    });
+};
 
