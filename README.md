@@ -34,7 +34,7 @@ To run the project locally:
 
 ## Screenshot
 
-![Note Finder Screenshot](./screenshot.jpg)
+![Note Finder Screenshot](./screenshot.JPG)
 
 ## License
 - This project is licensed under the MIT License.
